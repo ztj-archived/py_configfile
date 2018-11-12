@@ -1,0 +1,4 @@
+*.pyc
+*.spec
+.idea
+*.dynamic.json
