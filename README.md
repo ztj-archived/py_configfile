@@ -5,7 +5,7 @@ Python ConfigFile Package
 这是一个 Python 配置文件加载模块，主要解决 Ymal, Json 配置文件的快速加载，同时支持网络配置动态加载。
 
 ### 使用
-```python
+```
 from configfile import ConfigFile
 
 configfile = ConfigFile()
@@ -16,7 +16,7 @@ print(configfile.load_app_json('config'))
 ```
 
 ### 加载动态配置
-```python
+```
 import json
 import time
 from configfile import ConfigFile
