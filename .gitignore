@@ -2,3 +2,6 @@
 *.spec
 .idea
 *.dynamic.json
+py_configfile.egg-info
+build
+dist
