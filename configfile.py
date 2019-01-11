@@ -60,13 +60,15 @@ class ConfigFile(object):
         # file does not exist
         if not file_path:
             file_path = os.path.join(self.config_dir, '.'.join([sign, 'dynamic', 'json']))
+            file_content = callback()
             with open(file_path, 'w') as f:
-                f.write(callback())
+                f.write(file_content)
         # file expired
         st_m_time = os.stat(file_path).st_mtime
         if time.time() > (st_m_time + expires):
+            file_content = callback()
             with open(file_path, 'w') as f:
-                f.write(callback())
+                f.write(file_content)
         # load file
         return self.load_app_json(sign + '.dynamic')
 
