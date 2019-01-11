@@ -27,8 +27,8 @@ class TestConfigFile(unittest.TestCase):
 
     def setUp(self):
         # 创建对象
-        self.configfile = ConfigFile()
-        self.configfile.config_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'files'))
+        config_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), 'files'))
+        self.configfile = ConfigFile(config_dir)
 
     def test_is_app_exist(self):
         file_path = os.path.abspath(os.path.join(os.path.dirname(__file__), 'files', 'config.json'))

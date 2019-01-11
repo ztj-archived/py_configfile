@@ -11,7 +11,9 @@ import yaml
 
 class ConfigFile(object):
     """config file module"""
-    config_dir = os.path.abspath('')
+
+    def __init__(self, config_dir):
+        self.config_dir = config_dir
 
     def is_app_exist(self, sign, suffix):
         """check the app configuration file exists"""
