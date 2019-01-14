@@ -8,8 +8,7 @@ Python ConfigFile Package
 ```
 from configfile import ConfigFile
 
-configfile = ConfigFile()
-configfile.config_dir = 'files'
+configfile = ConfigFile('config_dir')
 
 print(configfile.load_app('config'))
 print(configfile.load_app_json('config'))
@@ -25,8 +24,7 @@ from configfile import ConfigFile
 timestamp1 = time.time()
 timestamp2 = False
 
-configfile = ConfigFile()
-configfile.config_dir = 'files'
+configfile = ConfigFile('config_dir)
 
 def callback():
     global timestamp1
