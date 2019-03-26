@@ -48,12 +48,17 @@ class TestConfigFile(unittest.TestCase):
     def test_load_app_json(self):
         self.assertEqual(self.configfile.load_app_json('config'), {"file": "json"})
 
-    def test_load_dynamic_json(self):
+    def test_dynamic_json(self):
         self.assertEqual(self.configfile.load_dynamic_json('config', callback, 3), {"timestamp": timestamp1})
         time.sleep(1)
         self.assertEqual(self.configfile.load_dynamic_json('config', callback, 3), {"timestamp": timestamp1})
         time.sleep(3)
         self.assertNotEqual(self.configfile.load_dynamic_json('config', callback, 3), {"timestamp": timestamp1})
+
+        file_path = os.path.join(self.configfile.config_dir, '.'.join(['config', 'dynamic', 'json']))
+        self.assertTrue(os.path.isfile(file_path))
+        self.configfile.del_dynamic_json('config')
+        self.assertFalse(os.path.isfile(file_path))
 
 
 if __name__ == '__main__':

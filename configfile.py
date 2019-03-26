@@ -72,6 +72,12 @@ class ConfigFile(object):
         # load file
         return self.load_app_json(sign + '.dynamic')
 
+    def del_dynamic_json(self, sign):
+        """delete dynamic json file"""
+        file_path = os.path.join(self.config_dir, '.'.join([sign, 'dynamic', 'json']))
+        if os.path.isfile(file_path):
+            os.unlink(file_path)
+
     def load_app_yaml(self, sign):
         """load app configuration yaml file"""
         file_path = self.is_app_exist(sign, 'yaml')
