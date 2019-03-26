@@ -10,7 +10,7 @@ except:
 
 setuptools.setup(
     name='py_configfile',
-    version='0.0.3',
+    version='0.0.4',
     description='python configuration file loading package',
     long_description=long_description,
     long_description_content_type="text/markdown",
